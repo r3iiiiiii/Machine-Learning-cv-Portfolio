@@ -1,0 +1,21 @@
+Column,Type,Description,Example
+numerical_50,Numerical,Main numerical feature (0-100),75
+Month,Categorical,Month of year (1-12),7
+Month_12,Binary,Indicator for December (0 or 1),0
+CompanySize,Categorical,Company size category,Small|Medium|Large
+Month_6,Binary,Indicator for June (0 or 1),1
+Churn,Target,Whether customer churned (0=No, 1=Yes),0
+
+Dataset Information:
+- Total Records: 96,000
+- Features: 5
+- Target Classes: 2 (Binary Classification)
+- Class Distribution: 87.5% No Churn, 12.5% Churn
+- Missing Values: None
+- Duplicates: None
+
+Preprocessing Steps:
+1. Label encoding for categorical variables (CompanySize)
+2. StandardScaler normalization for numerical features
+3. Train-test split: 80-20 (stratified)
+4. Class imbalance handling via scale_pos_weight in XGBoost
